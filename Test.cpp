@@ -3,7 +3,7 @@
 using namespace std;
 class Test
 {
-    int testcode;
+    int testCode;
     string description;
     int nocandidate,centerread;
     public:
@@ -13,11 +13,11 @@ class Test
 };
     void Test::schedule()
     {
-        cout<<"\n enter testcode : ";
-        cin>>testcode;
-        cout<<"\n description : ";
+        cout<<"\n Enter TestCode : ";
+        cin>>testCode;
+        cout<<"\n Description : ";
         cin>>description;
-        cout<<"\n number of candidate : ";
+        cout<<"\n Number of Candidate : ";
         cin>>nocandidate;
         calcntr();
     }
@@ -27,7 +27,7 @@ class Test
     }
     void Test::disptest()
     {
-        cout<<"\n testcode : "<<testcode;
+        cout<<"\n testCode : "<<testCode;
         cout<<"\n description : "<<description;
         cout<<"\n number of candidate  : "<<nocandidate;
         cout<<"\n number of center : "<<centerread;
