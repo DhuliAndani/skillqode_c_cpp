@@ -2,8 +2,10 @@
 using namespace std;
 class Bank
 {
-    int accountbalance , withdrawbalance , depositebalance , totalbalance , reminderbalance;
-
+    static int totalTransaction;
+    static int totalDepositeTransaction;
+    static int totalWithdrawTransaction;
+    
 public:
     Bank()
     {
@@ -15,7 +17,7 @@ public:
         accountbalance = initbal;
         cout << "\n parameterlized constructor called...";
     }
-    void showaccountbalance()
+    void showacountbalance()
     {
         cout << "\n account balance : " << accountbalance;
         withdrawblance();
