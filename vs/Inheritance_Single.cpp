@@ -5,11 +5,11 @@ class A
     public:
     A()
     {
-        cout<<"\n A Constructor ";
+        cout<<"\n A Constructor.. ";
     }
     ~A()
     {
-        cout<<"\n A Destructor ";
+        cout<<"\n A Destructor.. ";
     }
 };
 class B : public A
@@ -17,7 +17,7 @@ class B : public A
     public:
     B()
     {
-        cout<<"\n B Constructor ";
+        cout<<"\n B Constructor.. ";
 
     }
 };

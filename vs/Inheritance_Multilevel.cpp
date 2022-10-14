@@ -5,7 +5,7 @@ class A
     public:
     A()
     {
-        cout<<"\n A Constructor ";
+        cout<<"\n A Constructor.. ";
     }
 };
 class B : public A
@@ -13,7 +13,7 @@ class B : public A
     public:
     B()
     {
-        cout<<"\n B Constructor ";
+        cout<<"\n B Constructor.. ";
 
     }
 };
@@ -22,7 +22,7 @@ class C : public B
     public:
     C()
     {
-        cout<<"\n C Constructor ";
+        cout<<"\n C Constructor.. ";
 
     }
 };
