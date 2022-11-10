@@ -9,7 +9,7 @@ public:
     void read();
     void display();
 };
-    class Marks : public Student{
+class Marks : public Student{
 protected :
     int s1;
     int s2;
