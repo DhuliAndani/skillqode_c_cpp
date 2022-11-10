@@ -1,20 +1,22 @@
 #include<iostream>
 #include<string.h>
 using namespace std;
-class Person
-{
-    string name;
-public:
-    void read();
-    void disply();
-};
-class Bank : public Person
+class Bank
 {
     int accountno;
     string accountType;
 public:
     void getAccountDetails();
     void displayDetails();
+    
+};
+class Person : public Bank
+{
+    
+public:
+    string name;
+    void read();
+    void disply();
 };
 void Person::read()
 {
@@ -40,9 +42,10 @@ void Bank::displayDetails()
 int main()
 {
    Bank b;
-   b.read();
+   Person p;
+   p.read();
    b.getAccountDetails();
-   b.disply();
+   p.disply();
    b.displayDetails();
 }
    
