@@ -1,60 +1,62 @@
 #include<iostream>
+#include<stdlib.h>
 using namespace std;
-class Bank{ 
-    string name;
-    int accbalance;
-    public:
-    static int totaltracount,totaldpcount,totalwdcount,totaltraAmoucount,totaldpAmocount,totalwdAmocount;
-void GetData(){
-    cout<<"\n person Name :";
-    cin>>name;
-    cout<<"\n enter account balance: ";
-    cin>>accbalance;
-}
-void WdBalance(int amt){
-    cout<<"\n enter withdraw balance :";
-    cin>>amt;
-    totalwdAmocount+=amt;
-}
-void DpBalance(int amt){
-    cout<<"\n\n enter deposite balance :";
-    cin>>amt;
-    totaldpAmocount+=amt;
-}
-void SetCount(int x,int y,int z){
-    totaltracount=x;
-    totaldpcount=y;
-    totalwdcount=z;
- }
-void Counter(){
-    totaltracount++;
-    totaldpcount++;
-    totalwdcount++;
-    totaltraAmoucount=totaldpAmocount+totalwdAmocount;
-}
+class Bank
+{
+    int balance;
+public:
+    static int total_deposite_amt,total_withdraw_amt,total_trans;
+    Bank(int balance)
+    {
+        total_deposite_amt+=balance;
+        this -> balance=balance;
+    }
+    int showBalance()
+    {
+        return balance;
+    }
+    int deposite(int deposite)
+    {
+        total_deposite_amt+=deposite;
+        total_trans++;
+        balance=balance+deposite;
+        return balance;
+    }
+    int withdraw(int withdraw)
+    {
+        if (balance > withdraw)
+        {
+            total_trans++;
+            total_withdraw_amt+=withdraw;
+            balance=balance-withdraw;
+            return balance;
+        }
+        else
+        {
+            cout<<"\n Chel Your Balance !!!!!  " ;
+            return 1;
+        }
+        
+    }
 };
-int Bank::totaltracount=0;
-int Bank::totaldpcount=0;
-int Bank::totalwdcount=0;
-int Bank::totaltraAmoucount=0;
-int Bank::totaldpAmocount=0;
-int Bank::totalwdAmocount=0;
+int Bank::total_deposite_amt=0;
+int Bank::total_withdraw_amt=0;
+int Bank::total_trans=0;
+
 int main()
 {
-    Bank p[5];
-    int i;
-    for(i=1;i<=3;i++)
-    {
-        p[i].GetData();
-        p[i].WdBalance(5000);
-        p[i].DpBalance(10000);
-        p[i].SetCount(5,2,2);
-        p[i].Counter();
-    }
-    cout<<"\n total Transaction Count :"<<Bank::totaltracount;
-    cout<<"\n total Deposite Transaction Count :"<<Bank::totaldpcount;
-    cout<<"\n total Withdraw Transaction Count :"<<Bank::totalwdcount;
-    cout<<"\n Total transation Amount :"<<Bank::totaltraAmoucount;
-    cout<<"\n Total transation Deposite Amount :"<<Bank::totaldpAmocount;
-    cout<<"\n Total transation Withdraw Amount :"<<Bank::totalwdAmocount;
+    system ("CLS");
+    int ch,dp=0,wt;
+
+    Bank a(100),b(200);
+    a.deposite(50);
+    b.deposite(50);
+    b.withdraw(50);
+
+    cout<<"\n Total Deposite Amount.. " <<Bank::total_deposite_amt;
+    cout<<"\n Total Withdraw Amount.. " <<Bank::total_withdraw_amt;
+    cout<<"\n Total No. Of Transction.. " <<Bank::total_trans;
+
+    cout<<"\n Balance A.. " <<a.showBalance();
+    cout<<"\n Balance B.. " <<b.showBalance();
 }

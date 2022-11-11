@@ -3,7 +3,7 @@
 using namespace std;
 class Bank
 {
-    int accountno;
+    int accountno,accountBalance;
     string accountType;
 public:
     void getAccountDetails();
@@ -25,36 +25,42 @@ public:
 };
 void Person::read()
 {
-    cout<<"\n Account Holder Name.. ";
+    cout<<"\n Account Holder Name.. " ;
     cin>>name;
 }
 void Person::disply()
 {
-    cout<<"\n Account Holder Name.. "<<name<<endl;
+    cout<<"\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+    cout<<"\n\t Details Of Custmor";
+    cout<<"\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+    cout<<"\n Account Holder Name.. "<<name;
 }
 void Bank::getAccountDetails()
 {
-    cout<<"\n Account Number..";
+    cout<<" Account Number.. ";
     cin>>accountno;
-    cout<<"\n Account Type.. ";
+    cout<<" Account Balance.. ";
+    cin>>accountBalance;
+    cout<<" Account Type.. ";
     cin>>accountType;
 }
 void Bank::displayDetails()
 {
-    cout<<" Account Number.."<<accountno<<endl;
-    cout<<" Account Type.. "<<accountType<<endl;
+    cout<<"\n Account Number.."<<accountno;
+    cout<<"\n Account Balance.."<<accountBalance;
+    cout<<"\n Account Type.. "<<accountType;
 }
 void Loan::acceptBalance()
 {
-    cout<<"\n Loan Number.. ";
+    cout<<" Loan Number.. ";
     cin>>loan_no;
-    cout<<"\n Loan Amount.. ";
+    cout<<" Loan Amount.. ";
     cin>>loan_amount;
 }
 void Loan::displayBalance()
 {
-    cout<<" Loan Number.. " <<loan_no<<endl;
-    cout<<" Loan Amount.. " <<loan_amount<<endl;
+    cout<<"\n Loan Number.. " <<loan_no;
+    cout<<"\n Loan Amount.. " <<loan_amount;
 }
 int main()
 {
