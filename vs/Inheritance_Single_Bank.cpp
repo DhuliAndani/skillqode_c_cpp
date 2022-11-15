@@ -36,7 +36,7 @@ void Bank::getAccountDetails()
 }
 void Bank::displayDetails()
 {
-    cout<<" Account Number.."<<accountno<<endl;
+    cout<<" Account Number.."<<accountno<<endl; 
     cout<<" Account Type.. "<<accountType<<endl;
 }
 int main()
